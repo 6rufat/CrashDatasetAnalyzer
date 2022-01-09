@@ -5,12 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Set;
-
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
@@ -27,12 +23,12 @@ public class Main {
     public static int COLUMN_CNT;
 
     public static void main(String[] args) throws Exception {
- 
-	 DF = readCSV(data_dir);
-	// Array arr = Array.newInstance(String, 5);
-	// System.out.println("3/12/50".matches());
+
+	// DF = readCSV(data_dir);
+	// // Array arr = Array.newInstance(String, 5);
+	// // System.out.println("3/12/50".matches());
 	readCSV(data_dir);
-	String a = "/";
+	// String a = "/";
 
     }
 
@@ -50,8 +46,6 @@ public class Main {
 	Iterator<CSVRecord> records = CSVFormat.EXCEL.withHeader(HEADERS).withFirstRecordAsHeader().parse(in)
 		.iterator();
 	records.next(); // skip headers
-
-	HashMap<String, Object[]> map = new HashMap<>();
 
 	ArrayList<ArrayList<String>> columns = new ArrayList<>();
 
@@ -73,7 +67,7 @@ public class Main {
 	    }
 
 	}
-	 
+
 	DF = new DataFrame(HEADERS, columns, record_count);
 	System.out.println(DF);
 	return DF;
