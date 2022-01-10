@@ -28,6 +28,8 @@ public class Main {
 	// // Array arr = Array.newInstance(String, 5);
 	// // System.out.println("3/12/50".matches());
 	readCSV(data_dir);
+	DF.filter(null, DF.NULL_OUT, new String[] { "Time" });
+	System.out.println(DF);
 	// String a = "/";
 
     }
@@ -69,7 +71,7 @@ public class Main {
 	}
 
 	DF = new DataFrame(HEADERS, columns, record_count);
-	System.out.println(DF);
+	//
 	return DF;
     }
 
